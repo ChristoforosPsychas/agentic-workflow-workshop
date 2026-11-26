@@ -2,7 +2,7 @@
 
 Markdown-driven AI for real projects. Philomath Academy Online workshop.
 
-A small app for the React Alicante workshop: the conference schedule, stats and tech news.
+A small app for the online Philomath workshop: the conference schedule, stats and tech news.
 
 Built with Next.js (App Router), Chakra UI v3, next-intl, Recharts and Supabase. There is no login: every page is public, and the schedule is read from a Supabase `sessions` table.
 
