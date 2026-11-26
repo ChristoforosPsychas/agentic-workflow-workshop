@@ -1,6 +1,6 @@
 # Build Your Agentic Workflow
 
-Markdown-driven AI for real projects. React Alicante workshop.
+Markdown-driven AI for real projects. Philomath Academy Online workshop.
 
 A small app for the React Alicante workshop: the conference schedule, stats and tech news.
 
