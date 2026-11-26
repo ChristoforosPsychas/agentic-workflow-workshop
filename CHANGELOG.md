@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.3.2] — 2026-11-26
+
+### Maintenance
+
+- Setup guide: enable GitHub Actions on the fork during setup
+- Replace React Alicante wording with Philomath Academy (#22)
+- Update the workshop name and description in the README
+
+## Test Suite
+
+| Suite          | Status     |
+| -------------- | ---------- |
+| ESLint         | ⏳ pending |
+| Type-check     | ⏳ pending |
+| Unit tests     | ⏳ pending |
+| Build (Vercel) | ⏳ pending |
+
 ## [0.3.1] — 2026-09-24
 
 ### Bug Fixes

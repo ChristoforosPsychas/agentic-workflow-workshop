@@ -1,8 +1,8 @@
 # Build Your Agentic Workflow
 
-Markdown-driven AI for real projects. React Alicante workshop.
+Markdown-driven AI for real projects. Philomath Academy online workshop.
 
-A small app for the React Alicante workshop: the conference schedule, stats and tech news.
+A small app for the Philomath Academy online workshop: a conference schedule, stats and tech news.
 
 Built with Next.js (App Router), Chakra UI v3, next-intl, Recharts and Supabase. There is no login: every page is public, and the schedule is read from a Supabase `sessions` table.
 
