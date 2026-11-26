@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.4.0] — 2026-11-26
+
+### Features
+
+- Speakers page (#4)
+
+### Other
+
+- Trigger a preview
+
+## Test Suite
+
+| Suite          | Status     |
+| -------------- | ---------- |
+| ESLint         | ⏳ pending |
+| Type-check     | ⏳ pending |
+| Unit tests     | ⏳ pending |
+| Build (Vercel) | ⏳ pending |
+
 ## [0.3.2] — 2026-11-26
 
 ### Maintenance

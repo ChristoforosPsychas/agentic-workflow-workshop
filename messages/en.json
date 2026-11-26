@@ -5,11 +5,16 @@
     "stats": "Stats",
     "news": "News",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "speakers": "Speakers"
   },
   "Hero": {
     "heading": "React Alicante Conference Companion",
     "line1": "Your schedule, your sessions —",
     "line2": "one place"
+  },
+  "SpeakersPage": {
+    "title": "Speakers",
+    "description": "Who is speaking at React Alicante, and when."
   }
 }

@@ -5,11 +5,16 @@
     "stats": "Estadísticas",
     "news": "Noticias",
     "openMenu": "Abrir menú",
-    "closeMenu": "Cerrar menú"
+    "closeMenu": "Cerrar menú",
+    "speakers": "Ponentes"
   },
   "Hero": {
     "heading": "Guía de la conferencia React Alicante",
     "line1": "Tu agenda, tus sesiones —",
     "line2": "en un solo lugar"
+  },
+  "SpeakersPage": {
+    "title": "Ponentes",
+    "description": "Quién habla en React Alicante, y cuándo."
   }
 }
