@@ -1,7 +1,7 @@
 import { Card, CardContent, CardTitle } from "@/components/atoms/card";
 import { Link } from "@/i18n/navigation";
 import type { Speaker } from "@/utils/speakers";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text, VisuallyHidden } from "@chakra-ui/react";
 
 interface SpeakerCardProps {
   speaker: Speaker;
@@ -15,7 +15,14 @@ export function SpeakerCard({ speaker }: SpeakerCardProps) {
           {speaker.name}
         </CardTitle>
 
-        <Flex as="ul" direction="column" gap="3" listStyleType="none">
+        {/* role="list": Safari drops the list role once list-style is none. */}
+        <Flex
+          as="ul"
+          role="list"
+          direction="column"
+          gap="3"
+          listStyleType="none"
+        >
           {speaker.sessions.map((session) => (
             <Box as="li" key={session.id}>
               <Link href={`/sessions/${session.id}`}>
@@ -25,13 +32,25 @@ export function SpeakerCard({ speaker }: SpeakerCardProps) {
                   gap="0.5"
                   fontSize="sm"
                   color="var(--text-primary)"
-                  transition="color 0.2s"
-                  _hover={{ color: "var(--accent-hex)" }}
                 >
-                  <Text as="span" color="var(--text-muted)">
-                    {session.startTime}
+                  <Text asChild color="var(--text-secondary)">
+                    <time dateTime={session.startTime}>
+                      {session.startTime}
+                    </time>
                   </Text>
-                  <Text as="span">{session.title}</Text>
+                  {/* Keeps "12:15, Title" apart in the link's accessible name. */}
+                  <VisuallyHidden>, </VisuallyHidden>
+                  <Text
+                    as="span"
+                    textUnderlineOffset="2px"
+                    css={{
+                      "a:hover &, a:focus-visible &": {
+                        textDecoration: "underline",
+                      },
+                    }}
+                  >
+                    {session.title}
+                  </Text>
                 </Flex>
               </Link>
             </Box>

@@ -41,6 +41,12 @@ describe("SpeakerCard", () => {
       "/en/sessions/server-components-deep-dive",
     );
 
+    // Screen readers hear "10:15, Title", not "10:15Title". jsdom has no
+    // layout, so it drops the space the browser keeps — the comma is the point.
+    expect(first).toHaveAccessibleName(
+      /^10:15,\s?Server Components Beyond the Tutorial$/,
+    );
+
     expect(within(items[1]).getByRole("link")).toHaveAttribute(
       "href",
       "/en/sessions/rsc-workshop",

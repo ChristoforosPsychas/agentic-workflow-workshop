@@ -22,6 +22,8 @@ export default async function SpeakersPage({
 
       <Grid
         as="ul"
+        // Safari drops the list role once list-style is none.
+        role="list"
         listStyleType="none"
         gap="4"
         templateColumns={{
