@@ -161,6 +161,10 @@ that you have the `main` branch:
 git branch -r   # the list includes origin/main
 ```
 
+Then turn on Actions for your fork. GitHub turns them off on every new fork. On
+github.com, open your fork, click the **Actions** tab, and click **I understand
+my workflows, go ahead and enable them**.
+
 ## 3. Set up Supabase
 
 ### Create an account
