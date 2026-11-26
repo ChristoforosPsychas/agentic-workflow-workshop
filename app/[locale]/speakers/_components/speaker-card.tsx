@@ -1,7 +1,7 @@
+import { SpeakerSessionLink } from "@/app/[locale]/speakers/_components/speaker-session-link";
 import { Card, CardContent, CardTitle } from "@/components/atoms/card";
-import { Link } from "@/i18n/navigation";
 import type { Speaker } from "@/utils/speakers";
-import { Box, Flex, Text, VisuallyHidden } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 interface SpeakerCardProps {
   speaker: Speaker;
@@ -11,7 +11,7 @@ export function SpeakerCard({ speaker }: SpeakerCardProps) {
   return (
     <Card height="full">
       <CardContent gap="3">
-        <CardTitle as="h2" fontSize="lg" fontWeight="semibold">
+        <CardTitle as="h2" fontSize="md">
           {speaker.name}
         </CardTitle>
 
@@ -25,34 +25,7 @@ export function SpeakerCard({ speaker }: SpeakerCardProps) {
         >
           {speaker.sessions.map((session) => (
             <Box as="li" key={session.id}>
-              <Link href={`/sessions/${session.id}`}>
-                <Flex
-                  as="span"
-                  direction="column"
-                  gap="0.5"
-                  fontSize="sm"
-                  color="var(--text-primary)"
-                >
-                  <Text asChild color="var(--text-secondary)">
-                    <time dateTime={session.startTime}>
-                      {session.startTime}
-                    </time>
-                  </Text>
-                  {/* Keeps "12:15, Title" apart in the link's accessible name. */}
-                  <VisuallyHidden>, </VisuallyHidden>
-                  <Text
-                    as="span"
-                    textUnderlineOffset="2px"
-                    css={{
-                      "a:hover &, a:focus-visible &": {
-                        textDecoration: "underline",
-                      },
-                    }}
-                  >
-                    {session.title}
-                  </Text>
-                </Flex>
-              </Link>
+              <SpeakerSessionLink session={session} />
             </Box>
           ))}
         </Flex>

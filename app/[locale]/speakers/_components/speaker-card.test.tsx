@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { render, screen, within } from "@/tests/utils/render";
+import { render, screen } from "@/tests/utils/render";
 import type { Speaker } from "@/utils/speakers";
 
 import { SpeakerCard } from "./speaker-card";
@@ -26,30 +26,14 @@ describe("SpeakerCard", () => {
     ).toBeInTheDocument();
   });
 
-  it("lists each session with its start time, linking to the session page", () => {
+  it("lists one link per session, in the given order", () => {
     render(<SpeakerCard speaker={speaker} />);
 
-    const items = screen.getAllByRole("listitem");
-    expect(items).toHaveLength(2);
-
-    const first = within(items[0]).getByRole("link");
-    expect(first).toHaveTextContent("10:15");
-    expect(first).toHaveTextContent("Server Components Beyond the Tutorial");
-    // next-intl's Link adds the default locale prefix.
-    expect(first).toHaveAttribute(
-      "href",
+    expect(
+      screen.getAllByRole("link").map((link) => link.getAttribute("href")),
+    ).toEqual([
       "/en/sessions/server-components-deep-dive",
-    );
-
-    // Screen readers hear "10:15, Title", not "10:15Title". jsdom has no
-    // layout, so it drops the space the browser keeps — the comma is the point.
-    expect(first).toHaveAccessibleName(
-      /^10:15,\s?Server Components Beyond the Tutorial$/,
-    );
-
-    expect(within(items[1]).getByRole("link")).toHaveAttribute(
-      "href",
       "/en/sessions/rsc-workshop",
-    );
+    ]);
   });
 });
